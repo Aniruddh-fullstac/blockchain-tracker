@@ -1,0 +1,359 @@
+{
+  "blocks": {
+    "genesis": {
+      "id": "genesis-block-001",
+      "index": 0,
+      "timestamp": 1700000000000,
+      "transactions": [
+        {
+          "id": "genesis-tx-001",
+          "from": "0x0000000000000000000000000000000000000000",
+          "to": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+          "amount": 50.0,
+          "timestamp": 1700000000000,
+          "hash": "genesis-hash-001",
+          "status": "confirmed"
+        }
+      ],
+      "previousHash": "0",
+      "hash": "0000genesis-block-hash-001",
+      "nonce": 1,
+      "difficulty": 2
+    },
+    "block-1": {
+      "id": "block-001",
+      "index": 1,
+      "timestamp": 1700000060000,
+      "transactions": [
+        {
+          "id": "tx-001",
+          "from": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+          "to": "0x8ba1f109551bD432803012645Hac136c4c8b4d8b6",
+          "amount": 2.5,
+          "timestamp": 1700000055000,
+          "hash": "tx-hash-001",
+          "status": "confirmed"
+        },
+        {
+          "id": "tx-002",
+          "from": "0x8ba1f109551bD432803012645Hac136c4c8b4d8b6",
+          "to": "0x9c2e46Dd7744C1642926b4e5D5C9ec97D5c5e9c7",
+          "amount": 1.25,
+          "timestamp": 1700000058000,
+          "hash": "tx-hash-002",
+          "status": "confirmed"
+        }
+      ],
+      "previousHash": "0000genesis-block-hash-001",
+      "hash": "0001block-hash-001",
+      "nonce": 15,
+      "difficulty": 2
+    },
+    "block-2": {
+      "id": "block-002",
+      "index": 2,
+      "timestamp": 1700000120000,
+      "transactions": [
+        {
+          "id": "tx-003",
+          "from": "0x9c2e46Dd7744C1642926b4e5D5C9ec97D5c5e9c7",
+          "to": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+          "amount": 0.75,
+          "timestamp": 1700000115000,
+          "hash": "tx-hash-003",
+          "status": "confirmed"
+        },
+        {
+          "id": "tx-004",
+          "from": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+          "to": "0xAd3f57Ee8855D275403123756Ibd247e6d6fAd8",
+          "amount": 3.0,
+          "timestamp": 1700000118000,
+          "hash": "tx-hash-004",
+          "status": "confirmed"
+        },
+        {
+          "id": "tx-005",
+          "from": "0x8ba1f109551bD432803012645Hac136c4c8b4d8b6",
+          "to": "0xBe4g68Ff9966E386514234867Jce358f7e7gBe9",
+          "amount": 0.5,
+          "timestamp": 1700000120000,
+          "hash": "tx-hash-005",
+          "status": "confirmed"
+        }
+      ],
+      "previousHash": "0001block-hash-001",
+      "hash": "0002block-hash-002",
+      "nonce": 42,
+      "difficulty": 2
+    },
+    "block-3": {
+      "id": "block-003",
+      "index": 3,
+      "timestamp": 1700000180000,
+      "transactions": [
+        {
+          "id": "tx-006",
+          "from": "0xAd3f57Ee8855D275403123756Ibd247e6d6fAd8",
+          "to": "0xBe4g68Ff9966E386514234867Jce358f7e7gBe9",
+          "amount": 1.8,
+          "timestamp": 1700000175000,
+          "hash": "tx-hash-006",
+          "status": "confirmed"
+        },
+        {
+          "id": "tx-007",
+          "from": "0xBe4g68Ff9966E386514234867Jce358f7e7gBe9",
+          "to": "0xCf5h79Gg0077F497625345978Kdf469g8f8hC0",
+          "amount": 2.2,
+          "timestamp": 1700000178000,
+          "hash": "tx-hash-007",
+          "status": "confirmed"
+        }
+      ],
+      "previousHash": "0002block-hash-002",
+      "hash": "0003block-hash-003",
+      "nonce": 28,
+      "difficulty": 2
+    },
+    "block-4": {
+      "id": "block-004",
+      "index": 4,
+      "timestamp": 1700000240000,
+      "transactions": [
+        {
+          "id": "tx-008",
+          "from": "0xCf5h79Gg0077F497625345978Kdf469g8f8hC0",
+          "to": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+          "amount": 0.3,
+          "timestamp": 1700000235000,
+          "hash": "tx-hash-008",
+          "status": "confirmed"
+        },
+        {
+          "id": "tx-009",
+          "from": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+          "to": "0xDg6i80Hh1188G508736456089Leg570h9g9iD1",
+          "amount": 4.5,
+          "timestamp": 1700000238000,
+          "hash": "tx-hash-009",
+          "status": "confirmed"
+        },
+        {
+          "id": "tx-010",
+          "from": "0x8ba1f109551bD432803012645Hac136c4c8b4d8b6",
+          "to": "0xEh7j91Ii2299H619847567190Mfh681i0h0jE2",
+          "amount": 1.1,
+          "timestamp": 1700000240000,
+          "hash": "tx-hash-010",
+          "status": "confirmed"
+        },
+        {
+          "id": "tx-011",
+          "from": "0x9c2e46Dd7744C1642926b4e5D5C9ec97D5c5e9c7",
+          "to": "0xFi8k02Jj3300I720958678201Ngi792j1i1kF3",
+          "amount": 0.8,
+          "timestamp": 1700000240000,
+          "hash": "tx-hash-011",
+          "status": "confirmed"
+        }
+      ],
+      "previousHash": "0003block-hash-003",
+      "hash": "0004block-hash-004",
+      "nonce": 67,
+      "difficulty": 2
+    },
+    "block-5": {
+      "id": "block-005",
+      "index": 5,
+      "timestamp": 1700000300000,
+      "transactions": [
+        {
+          "id": "tx-012",
+          "from": "0xDg6i80Hh1188G508736456089Leg570h9g9iD1",
+          "to": "0xEh7j91Ii2299H619847567190Mfh681i0h0jE2",
+          "amount": 2.7,
+          "timestamp": 1700000295000,
+          "hash": "tx-hash-012",
+          "status": "confirmed"
+        },
+        {
+          "id": "tx-013",
+          "from": "0xFi8k02Jj3300I720958678201Ngi792j1i1kF3",
+          "to": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+          "amount": 0.4,
+          "timestamp": 1700000298000,
+          "hash": "tx-hash-013",
+          "status": "confirmed"
+        }
+      ],
+      "previousHash": "0004block-hash-004",
+      "hash": "0005block-hash-005",
+      "nonce": 33,
+      "difficulty": 2
+    }
+  },
+  "pendingTransactions": {
+    "pending-001": {
+      "id": "pending-tx-001",
+      "from": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+      "to": "0x8ba1f109551bD432803012645Hac136c4c8b4d8b6",
+      "amount": 1.5,
+      "timestamp": 1700000305000,
+      "hash": "pending-hash-001",
+      "status": "pending"
+    },
+    "pending-002": {
+      "id": "pending-tx-002",
+      "from": "0xEh7j91Ii2299H619847567190Mfh681i0h0jE2",
+      "to": "0xFi8k02Jj3300I720958678201Ngi792j1i1kF3",
+      "amount": 0.9,
+      "timestamp": 1700000308000,
+      "hash": "pending-hash-002",
+      "status": "pending"
+    },
+    "pending-003": {
+      "id": "pending-tx-003",
+      "from": "0xAd3f57Ee8855D275403123756Ibd247e6d6fAd8",
+      "to": "0xBe4g68Ff9966E386514234867Jce358f7e7gBe9",
+      "amount": 2.3,
+      "timestamp": 1700000310000,
+      "hash": "pending-hash-003",
+      "status": "pending"
+    },
+    "pending-004": {
+      "id": "pending-tx-004",
+      "from": "0xCf5h79Gg0077F497625345978Kdf469g8f8hC0",
+      "to": "0xDg6i80Hh1188G508736456089Leg570h9g9iD1",
+      "amount": 0.7,
+      "timestamp": 1700000312000,
+      "hash": "pending-hash-004",
+      "status": "pending"
+    },
+    "pending-005": {
+      "id": "pending-tx-005",
+      "from": "0x9c2e46Dd7744C1642926b4e5D5C9ec97D5c5e9c7",
+      "to": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+      "amount": 1.8,
+      "timestamp": 1700000315000,
+      "hash": "pending-hash-005",
+      "status": "pending"
+    },
+    "pending-006": {
+      "id": "pending-tx-006",
+      "from": "0x8ba1f109551bD432803012645Hac136c4c8b4d8b6",
+      "to": "0xAd3f57Ee8855D275403123756Ibd247e6d6fAd8",
+      "amount": 0.6,
+      "timestamp": 1700000318000,
+      "hash": "pending-hash-006",
+      "status": "pending"
+    },
+    "pending-007": {
+      "id": "pending-tx-007",
+      "from": "0xBe4g68Ff9966E386514234867Jce358f7e7gBe9",
+      "to": "0xCf5h79Gg0077F497625345978Kdf469g8f8hC0",
+      "amount": 3.2,
+      "timestamp": 1700000320000,
+      "hash": "pending-hash-007",
+      "status": "pending"
+    },
+    "pending-008": {
+      "id": "pending-tx-008",
+      "from": "0xFi8k02Jj3300I720958678201Ngi792j1i1kF3",
+      "to": "0xEh7j91Ii2299H619847567190Mfh681i0h0jE2",
+      "amount": 1.4,
+      "timestamp": 1700000322000,
+      "hash": "pending-hash-008",
+      "status": "pending"
+    }
+  },
+  "difficulty": 2,
+  "networkStats": {
+    "totalBlocks": 6,
+    "totalTransactions": 19,
+    "totalValue": 67.85,
+    "averageBlockTime": 60000,
+    "hashRate": "2.3 TH/s",
+    "activeMiners": 12,
+    "networkHashRate": "15.7 PH/s",
+    "lastBlockTime": 1700000300000,
+    "averageTransactionFee": 0.0001,
+    "totalFeesCollected": 0.0019
+  },
+  "miners": {
+    "miner-001": {
+      "id": "miner-001",
+      "address": "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6",
+      "hashRate": "1.2 TH/s",
+      "blocksMined": 3,
+      "totalRewards": 15.0,
+      "lastSeen": 1700000300000,
+      "status": "active"
+    },
+    "miner-002": {
+      "id": "miner-002",
+      "address": "0x8ba1f109551bD432803012645Hac136c4c8b4d8b6",
+      "hashRate": "0.8 TH/s",
+      "blocksMined": 2,
+      "totalRewards": 10.0,
+      "lastSeen": 1700000295000,
+      "status": "active"
+    },
+    "miner-003": {
+      "id": "miner-003",
+      "address": "0x9c2e46Dd7744C1642926b4e5D5C9ec97D5c5e9c7",
+      "hashRate": "0.3 TH/s",
+      "blocksMined": 1,
+      "totalRewards": 5.0,
+      "lastSeen": 1700000280000,
+      "status": "active"
+    }
+  },
+  "walletBalances": {
+    "0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6": {
+      "balance": 35.2,
+      "transactionCount": 8,
+      "lastActivity": 1700000315000
+    },
+    "0x8ba1f109551bD432803012645Hac136c4c8b4d8b6": {
+      "balance": 12.7,
+      "transactionCount": 6,
+      "lastActivity": 1700000320000
+    },
+    "0x9c2e46Dd7744C1642926b4e5D5C9ec97D5c5e9c7": {
+      "balance": 8.9,
+      "transactionCount": 4,
+      "lastActivity": 1700000315000
+    },
+    "0xAd3f57Ee8855D275403123756Ibd247e6d6fAd8": {
+      "balance": 5.4,
+      "transactionCount": 3,
+      "lastActivity": 1700000322000
+    },
+    "0xBe4g68Ff9966E386514234867Jce358f7e7gBe9": {
+      "balance": 3.8,
+      "transactionCount": 3,
+      "lastActivity": 1700000320000
+    },
+    "0xCf5h79Gg0077F497625345978Kdf469g8f8hC0": {
+      "balance": 2.1,
+      "transactionCount": 2,
+      "lastActivity": 1700000312000
+    },
+    "0xDg6i80Hh1188G508736456089Leg570h9g9iD1": {
+      "balance": 1.5,
+      "transactionCount": 2,
+      "lastActivity": 1700000300000
+    },
+    "0xEh7j91Ii2299H619847567190Mfh681i0h0jE2": {
+      "balance": 0.9,
+      "transactionCount": 2,
+      "lastActivity": 1700000322000
+    },
+    "0xFi8k02Jj3300I720958678201Ngi792j1i1kF3": {
+      "balance": 0.3,
+      "transactionCount": 1,
+      "lastActivity": 1700000322000
+    }
+  }
+}
