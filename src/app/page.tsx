@@ -170,7 +170,7 @@ export default function Home() {
         </div>
 
         {/* Blockchain Network Status */}
-        <AnimatedCard delay={0.5} className="mb-8 bg-gradient-to-r from-gray-800 to-gray-900 border-gray-600">
+        <AnimatedCard delay={0.5} className="mb-8 bg-white border border-gray-200">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold text-white flex items-center gap-2">
               <Network className="w-5 h-5 text-green-400" />

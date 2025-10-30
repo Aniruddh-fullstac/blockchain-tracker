@@ -141,3 +141,59 @@
 .glow-green {
   box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
 }
+
+/* Monochrome readability pass */
+.bw-theme {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+/* Kill colored/transparent backgrounds */
+.bw-theme .animated-bg { display: none !important; }
+.bw-theme .bg-gray-900,
+.bw-theme .bg-gray-800,
+.bw-theme .bg-gradient-to-br,
+.bw-theme .bg-gradient-to-r,
+.bw-theme .bg-blue-500,
+.bw-theme .bg-green-500,
+.bw-theme .bg-yellow-500,
+.bw-theme .bg-purple-500 {
+  background: #ffffff !important;
+}
+
+/* Text colors to solid black/greys */
+.bw-theme .text-white { color: #111111 !important; }
+.bw-theme .text-gray-300 { color: #444444 !important; }
+.bw-theme .text-gray-400 { color: #666666 !important; }
+
+/* Cards/panels */
+.bw-theme .border,
+.bw-theme .border-blue-400,
+.bw-theme .border-green-400,
+.bw-theme .border-yellow-400,
+.bw-theme .border-purple-400,
+.bw-theme .border-gray-600,
+.bw-theme .border-gray-700 {
+  border-color: #e5e7eb !important;
+}
+.bw-theme .rounded-lg, .bw-theme .rounded-xl {
+  border: 1px solid #e5e7eb;
+}
+.bw-theme .backdrop-blur-lg { backdrop-filter: none !important; }
+
+/* Inputs/selects */
+.bw-theme input, .bw-theme select, .bw-theme textarea {
+  background: #ffffff !important;
+  color: #111111 !important;
+  border-color: #e5e7eb !important;
+}
+.bw-theme ::placeholder { color: #9ca3af !important; }
+
+/* Buttons: replace gradients with solid monochrome */
+.bw-theme .bg-gradient-to-r {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+/* Icon visibility in mono */
+.bw-theme svg { color: #111111; stroke: #111111; }
