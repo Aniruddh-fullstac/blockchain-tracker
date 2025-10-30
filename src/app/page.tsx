@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Blockchain, listenToBlockchainUpdates, mineBlock, addBlockToFirebase } from '@/lib/blockchain';
+import { Blockchain, listenToBlockchainUpdates, mineBlock, addBlockToFirebase, registerCurrentDevice } from '@/lib/blockchain';
 import AnimatedCard from '@/components/ui/AnimatedCard';
 import GlowingButton from '@/components/ui/GlowingButton';
 import BlockVisualization from '@/components/blockchain/BlockVisualization';
@@ -35,6 +35,11 @@ export default function Home() {
   useEffect(() => {
     const unsubscribe = listenToBlockchainUpdates(setBlockchain);
     return unsubscribe;
+  }, []);
+
+  // Register device on first load
+  useEffect(() => {
+    registerCurrentDevice().catch(() => {});
   }, []);
 
   // Auto-mining effect
@@ -76,9 +81,9 @@ export default function Home() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
-      {/* Animated background */}
-      <div className="absolute inset-0 overflow-hidden">
+    <div className="min-h-screen bw-theme bg-white text-black">
+      {/* Animated background (hidden in bw theme via CSS) */}
+      <div className="absolute inset-0 overflow-hidden animated-bg">
         <motion.div
           className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500 bg-opacity-20 rounded-full blur-3xl"
           animate={{ 

@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { createTransaction, addTransactionToFirebase, generateWalletAddress } from '@/lib/blockchain';
+import { createTransaction, addTransactionToFirebase, generateWalletAddress, listenToDevices, getCurrentDeviceWallet, registerCurrentDevice, type Device } from '@/lib/blockchain';
 import GlowingButton from '@/components/ui/GlowingButton';
 import { Send, RefreshCw } from 'lucide-react';
 
@@ -11,6 +11,22 @@ export default function TransactionForm() {
   const [to, setTo] = useState('');
   const [amount, setAmount] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [devices, setDevices] = useState<Device[]>([]);
+  const [selectedDeviceId, setSelectedDeviceId] = useState<string>('');
+
+  useEffect(() => {
+    // Ensure current device is registered and set default sender wallet
+    registerCurrentDevice().then(() => {
+      setFrom(getCurrentDeviceWallet());
+    }).catch(() => {
+      setFrom(getCurrentDeviceWallet());
+    });
+
+    const unsubscribe = listenToDevices((list) => {
+      setDevices(list);
+    });
+    return unsubscribe;
+  }, []);
 
   const handleGenerateAddress = (field: 'from' | 'to') => {
     const address = generateWalletAddress();
@@ -81,7 +97,26 @@ export default function TransactionForm() {
         <label className="block text-sm font-medium text-gray-300 mb-2">
           To Address
         </label>
-        <div className="flex gap-2">
+        <div className="flex flex-col gap-2">
+          {/* Select existing device wallet */}
+          <select
+            value={selectedDeviceId}
+            onChange={(e) => {
+              const id = e.target.value;
+              setSelectedDeviceId(id);
+              const device = devices.find(d => d.id === id);
+              if (device) setTo(device.walletAddress);
+            }}
+            className="px-4 py-2 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="">Select recipient device wallet...</option>
+            {devices.map((d) => (
+              <option key={d.id} value={d.id}>
+                {d.name} • {d.walletAddress.substring(0, 10)}...
+              </option>
+            ))}
+          </select>
+
           <input
             type="text"
             value={to}

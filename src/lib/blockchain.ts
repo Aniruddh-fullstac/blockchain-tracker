@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { ref, push, onValue, off } from 'firebase/database';
+import { ref, push, onValue, off, set, get, child } from 'firebase/database';
 import { database } from './firebase';
 
 export interface Transaction {
@@ -29,6 +29,13 @@ export interface Blockchain {
   blocks: Block[];
   pendingTransactions: Transaction[];
   difficulty: number;
+}
+
+export interface Device {
+  id: string;
+  name: string;
+  walletAddress: string;
+  createdAt: number;
 }
 
 // Simple hash function for demonstration
@@ -161,5 +168,55 @@ export function generateWalletAddress(): string {
     result += chars.charAt(Math.floor(Math.random() * chars.length));
   }
   return result;
+}
+
+// Ensure the current device is registered with a wallet in Firebase
+export async function registerCurrentDevice(): Promise<Device> {
+  const id = getDeviceId();
+  const name = getDeviceName();
+  let wallet = localStorage.getItem('blockchain-device-wallet');
+  if (!wallet) {
+    wallet = generateWalletAddress();
+    localStorage.setItem('blockchain-device-wallet', wallet);
+  }
+
+  const devicesRef = ref(database, 'devices');
+  const snapshot = await get(child(devicesRef, id));
+  if (!snapshot.exists()) {
+    const device: Device = {
+      id,
+      name,
+      walletAddress: wallet,
+      createdAt: Date.now()
+    };
+    await set(child(devicesRef, id), device);
+    return device;
+  } else {
+    const existing = snapshot.val() as Device;
+    // Keep local wallet in sync if needed
+    if (existing.walletAddress && existing.walletAddress !== wallet) {
+      localStorage.setItem('blockchain-device-wallet', existing.walletAddress);
+    }
+    return existing;
+  }
+}
+
+export function getCurrentDeviceWallet(): string {
+  let wallet = localStorage.getItem('blockchain-device-wallet');
+  if (!wallet) {
+    wallet = generateWalletAddress();
+    localStorage.setItem('blockchain-device-wallet', wallet);
+  }
+  return wallet;
+}
+
+export function listenToDevices(callback: (devices: Device[]) => void) {
+  const devicesRef = ref(database, 'devices');
+  const unsubscribe = onValue(devicesRef, (snapshot) => {
+    const data = snapshot.val();
+    const devices: Device[] = data ? Object.values(data) : [];
+    callback(devices);
+  });
+  return () => off(devicesRef, 'value', unsubscribe);
 }
 
